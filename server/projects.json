@@ -1,0 +1,32 @@
+[
+  {
+    "tag": "Flask Website",
+    "title": "Netflix Clone.",
+    "type": "svg",
+    "svgPreset": "netflix"
+  },
+  {
+    "tag": "Database Website",
+    "title": "Login and Signin page.",
+    "type": "svg",
+    "svgPreset": "database"
+  },
+  {
+    "tag": "billing Web app Website",
+    "title": "OwnBillBook",
+    "type": "svg",
+    "svgPreset": "billing"
+  },
+  {
+    "tag": "Portfolio Website",
+    "title": "Sivanesh Portfolio.",
+    "type": "image",
+    "imagePath": "/uploads/profile_avatar.jpg"
+  },
+  {
+    "tag": "react app",
+    "title": "ssss",
+    "type": "image",
+    "imagePath": "/uploads/1781503846943-833508019.png"
+  }
+]
