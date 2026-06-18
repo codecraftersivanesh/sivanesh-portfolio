@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import avatarImg from '../assets/favicon.svg';
 import netflixImg from '../assets/netflix clone logo.png';
 import resumeImg from '../assets/favicon.png';
-import billbookImg from '../assets/client/src/assets/Screenshot_2024-05-19_111855-removebg-preview.png';
+import billbookImg from '../assets/food man.png';
 
 const defaultProjects = [
   {
