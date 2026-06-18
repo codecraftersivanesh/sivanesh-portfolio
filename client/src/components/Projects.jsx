@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import avatarImg from '../assets/favicon.svg';
 import netflixImg from '../assets/netflix clone logo.png';
 import resumeImg from '../assets/favicon.png';
-import billbookImg from '../assets/Screenshot 2026-05-09 112235.png';
+import billbookImg from '../assets/client/src/assets/Screenshot_2024-05-19_111855-removebg-preview.png';
 
 const defaultProjects = [
   {
@@ -22,8 +22,7 @@ const defaultProjects = [
     title: "OwnBillBook",
     image: billbookImg,
     githubUrl: "https://github.com/codecraftersivanesh/ownbillbook"
-  },
-  {
+
     tag: "Portfolio Website",
     title: "Sivanesh Portfolio.",
     image: avatarImg,
