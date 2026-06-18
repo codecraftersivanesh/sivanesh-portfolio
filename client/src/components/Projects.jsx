@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import avatarImg from '../assets/profile_avatar.jpg';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 
 const getSvgIcon = (presetName) => {
   switch (presetName) {
@@ -74,12 +74,7 @@ const getSvgIcon = (presetName) => {
   }
 };
 
-const Projects = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [projects, setProjects] = useState([]);
-  const sectionRef = useRef(null);
-
-  const defaultProjects = [
+const defaultProjects = [
     {
       tag: "Flask Website",
       title: "Netflix Clone.",
@@ -106,6 +101,10 @@ const Projects = () => {
     }
   ];
 
+const Projects = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
   useEffect(() => {
     // 1. Setup Intersection Observer for animations
     const observer = new IntersectionObserver(
@@ -119,34 +118,14 @@ const Projects = () => {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentSectionRef = sectionRef.current;
+    if (currentSectionRef) {
+      observer.observe(currentSectionRef);
     }
 
-    // 2. Fetch projects from Server backend
-    const fetchProjects = async () => {
-      try {
-        const res = await fetch(`${API_URL}/api/projects`);
-        if (!res.ok) {
-          throw new Error('API server returned error');
-        }
-        const data = await res.json();
-        if (data && data.length > 0) {
-          setProjects(data);
-        } else {
-          setProjects(defaultProjects);
-        }
-      } catch (err) {
-        console.warn('Backend server offline. Falling back to default static project list.', err);
-        setProjects(defaultProjects);
-      }
-    };
-
-    fetchProjects();
-
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentSectionRef) {
+        observer.unobserve(currentSectionRef);
       }
     };
   }, []);
@@ -174,14 +153,12 @@ const Projects = () => {
 
         {/* Projects Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-          {projects.map((project, index) => {
+          {defaultProjects.map((project, index) => {
             // Determine image source
             let imageSrc = '';
             if (project.type === 'image') {
               if (project.imagePath === '/uploads/profile_avatar.jpg') {
                 imageSrc = avatarImg; // Use local static import
-              } else if (project.imagePath && project.imagePath.startsWith('/uploads')) {
-                imageSrc = `${API_URL}${project.imagePath}`; // Use server URL
               } else {
                 imageSrc = project.imagePath || avatarImg;
               }
