@@ -3,6 +3,7 @@ import avatarImg from '../assets/favicon.svg';
 import netflixImg from '../assets/netflix clone logo.png';
 import resumeImg from '../assets/favicon.png';
 import billbookImg from '../assets/ownbillbook.png';
+import foodman from '../assets/food man.png';
 
 const defaultProjects = [
   {
@@ -28,6 +29,12 @@ const defaultProjects = [
     title: "Sivanesh Portfolio.",
     image: avatarImg,
     githubUrl: "https://github.com/codecraftersivanesh/sivanesh-portfolio"
+  },
+  {
+    tag: "Food Man",
+    title: "Front-end Website using HTMl, CSS, JS",
+    image: foodman,
+    githubUrl: "https://github.com/codecraftersivanesh/front-project/tree/main/food%20man%20full%20website"
   }
 ];
 
