@@ -1,112 +1,42 @@
 import { useEffect, useRef, useState } from 'react';
-import avatarImg from '../assets/profile_avatar.jpg';
-
-
-
-const getSvgIcon = (presetName) => {
-  switch (presetName) {
-    case 'netflix':
-      return (
-        <div className="flex flex-col items-center justify-center">
-          <div className="w-24 h-24 rounded-full bg-black flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-500">
-            <span className="text-red-600 font-extrabold text-7xl font-sans tracking-tighter select-none">N</span>
-          </div>
-          <span className="text-red-600 font-bold text-2xl mt-3 select-none">NetflixClone</span>
-        </div>
-      );
-    case 'database':
-      return (
-        <div className="flex flex-row items-center justify-center gap-2 group-hover:scale-105 transition-transform duration-500">
-          <div className="flex flex-col">
-            <svg width="40" height="90" viewBox="0 0 40 90" className="opacity-80">
-              <path d="M 0 10 A 20 8 0 0 0 40 10 L 40 80 A 20 8 0 0 1 0 80 Z" fill="#2563eb" />
-              <ellipse cx="20" cy="10" rx="20" ry="8" fill="#60a5fa" />
-              <path d="M 0 35 A 20 8 0 0 0 40 35" fill="none" stroke="#1d4ed8" strokeWidth="2" />
-              <path d="M 0 60 A 20 8 0 0 0 40 60" fill="none" stroke="#1d4ed8" strokeWidth="2" />
-            </svg>
-          </div>
-          <div className="flex flex-col -mt-4 z-1">
-            <svg width="48" height="100" viewBox="0 0 48 100" className="filter drop-shadow-lg">
-              <path d="M 0 12 A 24 9 0 0 0 48 12 L 48 88 A 24 9 0 0 1 0 88 Z" fill="#1e3a8a" />
-              <ellipse cx="24" cy="12" rx="24" ry="9" fill="#3b82f6" />
-              <path d="M 0 38 A 24 9 0 0 0 48 38" fill="none" stroke="#172554" strokeWidth="2.5" />
-              <path d="M 0 63 A 24 9 0 0 0 48 63" fill="none" stroke="#172554" strokeWidth="2.5" />
-            </svg>
-          </div>
-          <div className="flex flex-col">
-            <svg width="40" height="90" viewBox="0 0 40 90" className="opacity-80">
-              <path d="M 0 10 A 20 8 0 0 0 40 10 L 40 80 A 20 8 0 0 1 0 80 Z" fill="#2563eb" />
-              <ellipse cx="20" cy="10" rx="20" ry="8" fill="#60a5fa" />
-              <path d="M 0 35 A 20 8 0 0 0 40 35" fill="none" stroke="#1d4ed8" strokeWidth="2" />
-              <path d="M 0 60 A 20 8 0 0 0 40 60" fill="none" stroke="#1d4ed8" strokeWidth="2" />
-            </svg>
-          </div>
-        </div>
-      );
-    case 'billing':
-      return (
-        <div className="flex flex-col items-center justify-center group-hover:scale-105 transition-transform duration-500">
-          <div className="relative">
-            <svg width="84" height="84" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-500">
-              <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1Z" />
-              <path d="M16 8H8" />
-              <path d="M16 12H8" />
-              <path d="M13 16H8" />
-            </svg>
-            <div className="absolute -bottom-1 -right-1 bg-yellow-500 rounded-full w-8 h-8 flex items-center justify-center border-2 border-white shadow-md">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
-              </svg>
-            </div>
-          </div>
-          <span className="text-[#111827] font-bold text-xl mt-4 select-none">OwnBillBook</span>
-        </div>
-      );
-    default:
-      return (
-        <div className="flex flex-col items-center justify-center group-hover:scale-105 transition-transform duration-500 text-gray-400">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <polyline points="16 18 22 12 16 6"></polyline>
-            <polyline points="8 6 2 12 8 18"></polyline>
-          </svg>
-        </div>
-      );
-  }
-};
+import avatarImg from '../assets/favicon.svg';
+import netflixImg from '../assets/netflix clone logo.png';
+import resumeImg from '../assets/favicon.png';
+import billbookImg from '../assets/Screenshot 2026-05-09 112235.png';
 
 const defaultProjects = [
-    {
-      tag: "Flask Website",
-      title: "Netflix Clone.",
-      type: "svg",
-      svgPreset: "netflix"
-    },
-    {
-      tag: "Database Website",
-      title: "Login and Signin page.",
-      type: "svg",
-      svgPreset: "database"
-    },
-    {
-      tag: "billing Web app Website",
-      title: "OwnBillBook",
-      type: "svg",
-      svgPreset: "billing"
-    },
-    {
-      tag: "Portfolio Website",
-      title: "Sivanesh Portfolio.",
-      type: "image",
-      imagePath: "/uploads/profile_avatar.jpg"
-    }
-  ];
+  {
+    tag: "Flask Website",
+    title: "Netflix Clone.",
+    image: netflixImg,
+    githubUrl: "https://github.com/codecraftersivanesh/Netflix-clone-app"
+  },
+  {
+    tag: "AI Resume Builder",
+    title: "MERN Stack Website",
+    image: resumeImg,
+    githubUrl: "https://github.com/codecraftersivanesh/Login-sign-page-with--database"
+  },
+  {
+    tag: "billing Web app Website",
+    title: "OwnBillBook",
+    image: billbookImg,
+    githubUrl: "https://github.com/codecraftersivanesh/ownbillbook"
+  },
+  {
+    tag: "Portfolio Website",
+    title: "Sivanesh Portfolio.",
+    image: avatarImg,
+    githubUrl: "https://github.com/codecraftersivanesh/sivanesh-portfolio"
+  }
+];
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    // 1. Setup Intersection Observer for animations
+    // Setup Intersection Observer for animations
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -154,33 +84,19 @@ const Projects = () => {
         {/* Projects Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {defaultProjects.map((project, index) => {
-            // Determine image source
-            let imageSrc = '';
-            if (project.type === 'image') {
-              if (project.imagePath === '/uploads/profile_avatar.jpg') {
-                imageSrc = avatarImg; // Use local static import
-              } else {
-                imageSrc = project.imagePath || avatarImg;
-              }
-            }
-
             const CardContent = (
               <>
                 {/* White visual box container */}
                 <div className="bg-white aspect-square rounded-lg flex items-center justify-center overflow-hidden relative shadow-inner w-full">
-                  {project.type === "image" ? (
-                    <img 
-                      src={imageSrc} 
-                      alt={project.title} 
-                      className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105"
-                      onError={(e) => {
-                        e.target.src = avatarImg; // Fallback if image fails to load
-                      }}
-                      loading="lazy"
-                    />
-                  ) : (
-                    getSvgIcon(project.svgPreset)
-                  )}
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105"
+                    onError={(e) => {
+                      e.target.src = avatarImg; // Fallback if image fails to load
+                    }}
+                    loading="lazy"
+                  />
                   {/* Vignette border overlay inside white box */}
                   <div className="absolute inset-0 border border-black/5 rounded-lg pointer-events-none" />
                 </div>
@@ -214,7 +130,7 @@ const Projects = () => {
             if (project.githubUrl) {
               return (
                 <a 
-                  key={project._id || index}
+                  key={index}
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -228,7 +144,7 @@ const Projects = () => {
 
             return (
               <div 
-                key={project._id || index}
+                key={index}
                 className={cardClasses}
                 style={cardStyles}
               >
