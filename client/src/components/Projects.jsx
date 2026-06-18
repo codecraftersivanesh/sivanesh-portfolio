@@ -19,7 +19,7 @@ const defaultProjects = [
   },
   {
     tag: "billing Web app Website",
-    title: "OwnBillBook",
+    title: "OwnBillBook Using HTML, CSS, JS",
     image: billbookImg,
     githubUrl: "https://github.com/codecraftersivanesh/ownbillbook"
   },
