@@ -22,7 +22,8 @@ const defaultProjects = [
     title: "OwnBillBook",
     image: billbookImg,
     githubUrl: "https://github.com/codecraftersivanesh/ownbillbook"
-
+  },
+  {
     tag: "Portfolio Website",
     title: "Sivanesh Portfolio.",
     image: avatarImg,
