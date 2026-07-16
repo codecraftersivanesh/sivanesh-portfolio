@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import avatarImg from '../assets/profile.jpeg';
-import cv from '../assets/profile.jpeg';
+import cv from '../assets/sivanesh resume 2.pdf';
 
 const Details = () => {
   const [isVisible, setIsVisible] = useState(false);
